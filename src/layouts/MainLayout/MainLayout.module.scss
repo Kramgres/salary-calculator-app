@@ -1,7 +1,26 @@
-.layout{
-
+.content{
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .main{
 
+}
+
+@media (max-width: 1400px) {
+  .content {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    width: 720px;
+  }
 }

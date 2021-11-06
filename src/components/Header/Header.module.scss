@@ -1,0 +1,32 @@
+.header{
+  height: var(--header-height);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  color: var(--black85);
+  box-shadow: inset 0px -1px 0px #F0F0F0;
+
+  &__content{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.nav{
+  display: flex;
+  height: 100%;
+
+  &__item{
+    display: flex;
+    align-items: center;
+    height: calc(100% - 1px);
+    border-bottom: 2px solid transparent;
+    &:hover{
+      border-bottom: 2px solid var(--blue6);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+:root{
+    --header-height: 50px;
+
+    --black85: rgba(0, 0, 0, 0.85);
+
+    --blue1: #E6F7FF;
+    --blue2: #BAE7FF;
+    --blue3: #91D5FF;
+    --blue4: #69C0FF;
+    --blue5: #40A9FF;
+    --blue6: #1890FF;
+    --blue7: #096DD9;
+    --blue8: #0050B3;
+    --blue9: #003A8C;
+    --blue10: #002766;
+
+    --white: #FFFFFF
+}

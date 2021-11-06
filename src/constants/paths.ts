@@ -1,4 +1,5 @@
 export const PATHS = {
   root: '/',
-  calculator: '/calculator'
+  calculator: '/calculator',
+  login: '/login'
 }
