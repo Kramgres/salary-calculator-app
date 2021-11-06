@@ -13,7 +13,7 @@ const Header: FC = () => {
     <header className={styles.header}>
       <div className={cn(stylesLayout.content, styles.header__content)}>
         <nav className={styles.nav}>
-          <NavLink to={PATHS.calculator} className={styles.nav__item}>Калькулятор</NavLink>
+          <NavLink to={PATHS.calculator} className={({isActive}) => cn(styles.nav__item, { [styles.nav__item_active]: isActive })}>Калькулятор</NavLink>
         </nav>
         <NavLink to={PATHS.login} className={styles.login}>Войти</NavLink>
       </div>
