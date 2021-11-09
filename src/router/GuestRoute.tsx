@@ -1,10 +1,10 @@
-import React, {FC, ReactElement} from 'react'
+import React, {FC, ReactElement, ReactNode} from 'react'
 import {Route} from 'react-router-dom'
 
 type PropsType = {
   path: string,
   element: ReactElement,
-  children?: ReactElement
+  children?: ReactNode
 }
 
 const GuestRoute: FC<PropsType> = ({path, element, children}) => {
