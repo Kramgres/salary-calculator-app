@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-const Calculator: FC = () => {
+const SalaryCalculator: FC = () => {
   return (
     <div>
       CalculatorPage
@@ -8,4 +8,4 @@ const Calculator: FC = () => {
   )
 }
 
-export default Calculator
+export default SalaryCalculator

@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux'
 
-import calculatorReducer from '../pages/Calculator/Calculator.reducer'
+import salaryCalculatorReducer from '../pages/SalaryCalculator/Calculator.reducer'
 
 const rootReducer = combineReducers({
-  calculatorReducer
+  calculatorReducer: salaryCalculatorReducer
 })
 
 export default rootReducer
