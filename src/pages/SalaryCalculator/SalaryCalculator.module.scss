@@ -4,7 +4,13 @@
   background: var(--white-color);
   min-height: 600px;
 
-  &__title {
-    font-size: 20px;
+  &__title{
+    &:global(.ant-typography) {
+      font-size: 24px;
+    }
   }
+}
+
+.days {
+  display: flex;
 }
