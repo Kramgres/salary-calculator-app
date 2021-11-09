@@ -11,8 +11,20 @@
   &__content{
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 48px 1fr auto;
+    grid-column-gap: 16px;
     align-items: center;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    height: 40px;
+    width: 40px;
   }
 }
 
