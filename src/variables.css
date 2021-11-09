@@ -1,18 +1,18 @@
 :root{
     --header-height: 50px;
 
-    --black85: rgba(0, 0, 0, 0.85);
+    --black85-color: rgba(0, 0, 0, 0.85);
 
-    --blue1: #E6F7FF;
-    --blue2: #BAE7FF;
-    --blue3: #91D5FF;
-    --blue4: #69C0FF;
-    --blue5: #40A9FF;
-    --blue6: #1890FF;
-    --blue7: #096DD9;
-    --blue8: #0050B3;
-    --blue9: #003A8C;
-    --blue10: #002766;
+    --primary1-color: #E6F7FF;
+    --primary2-color: #BAE7FF;
+    --primary3-color: #91D5FF;
+    --primary4-color: #69C0FF;
+    --primary5-color: #40A9FF;
+    --primary6-color: #1890FF;
+    --primary7-color: #096DD9;
+    --primary8-color: #0050B3;
+    --primary9-color: #003A8C;
+    --primary10-color: #002766;
 
-    --white: #FFFFFF
+    --white-color: #FFFFFF
 }

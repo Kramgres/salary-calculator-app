@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--white);
-  color: var(--black85);
+  background-color: var(--white-color);
+  color: var(--black85-color);
   box-shadow: inset 0px -1px 0px #F0F0F0;
 
   &__content{
@@ -39,12 +39,12 @@
     border-bottom: 2px solid transparent;
 
     &:hover{
-      border-bottom: 2px solid var(--blue6);
+      border-bottom: 2px solid var(--primary6-color);
     }
 
     &_active {
-      color: var(--blue6);
-      border-bottom: 2px solid var(--blue6);
+      color: var(--blue6-color);
+      border-bottom: 2px solid var(--primary6-color);
     }
   }
 }

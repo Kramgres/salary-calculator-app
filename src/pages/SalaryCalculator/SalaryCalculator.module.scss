@@ -1,0 +1,10 @@
+.calculator {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--white-color);
+  min-height: 600px;
+
+  &__title {
+    font-size: 20px;
+  }
+}

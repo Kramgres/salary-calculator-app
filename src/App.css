@@ -6,16 +6,16 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: var(--black85);
+  color: var(--black85-color);
   font-size: 14px;
   line-height: 22px;
 }
 
 a {
-  color: var(--black85);
+  color: var(--black85-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--blue6);
+  color: var(--primary6-color);
 }

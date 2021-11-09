@@ -7,9 +7,11 @@ import styles from './MainLayout.module.scss'
 
 const MainLayout: FC = () => {
   return (
-    <div className={styles.content}>
-      <Header/>
-      <main className={styles.main}><Outlet/></main>
+    <div className={styles.mainLayout}>
+      <div className={styles.content}>
+        <Header/>
+        <main className={styles.main}><Outlet/></main>
+      </div>
     </div>
   )
 }

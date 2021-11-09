@@ -1,9 +1,15 @@
-.content{
+.mainLayout {
+  --backgroun-color: #F0F2F5;
+  background: var(--backgroun-color);
+  min-height: 100vh;
+}
+
+.content {
   max-width: 1320px;
   margin: 0 auto;
 }
 
-.main{
+.main {
   padding-top: var(--header-height);
 }
 
