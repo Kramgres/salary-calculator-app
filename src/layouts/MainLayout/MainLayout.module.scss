@@ -6,11 +6,13 @@
 
 .content {
   max-width: 1320px;
+  height: 100vh;
   margin: 0 auto;
 }
 
 .main {
   padding-top: var(--header-height);
+  height: 100%;
 }
 
 @media (max-width: 1400px) {

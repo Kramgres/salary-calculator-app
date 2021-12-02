@@ -5,6 +5,7 @@ import {PATHS} from '../constants/paths'
 import MainLayout from '../layouts/MainLayout/MainLayout'
 import Home from '../pages/Home/Home.page'
 import SalaryCalculator from '../pages/SalaryCalculator/SalaryCalculator'
+import Login from '../pages/Login/Login'
 
 import GuestRoute from './GuestRoute'
 
@@ -15,6 +16,7 @@ const Router: FC = () => {
         <GuestRoute path={PATHS.root} element={<MainLayout/>}>
           <GuestRoute path={PATHS.root} element={<Home/>}/>
           <GuestRoute path={PATHS.calculator} element={<SalaryCalculator/>}/>
+          <GuestRoute path={PATHS.login} element={<Login/>}/>
         </GuestRoute>
       </Routes>
     </BrowserRouter>
