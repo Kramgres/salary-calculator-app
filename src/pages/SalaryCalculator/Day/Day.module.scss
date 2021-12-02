@@ -1,0 +1,32 @@
+.day {
+  display: grid;
+  grid-template-columns: 300px 150px 120px 70px;
+  grid-column-gap: 24px;
+
+  &__time {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__price {
+    display: flex;
+
+    & span {
+      font-size: 16px;
+      margin-left: 8px;
+      margin-top: 8px;
+    }
+  }
+
+  &__result {
+    font-size: 24px;
+    color: var(--primary6-color);
+  }
+
+  &__remove {
+    text-align: start;
+    font-size: 24px;
+    color: var(--error5-color);
+  }
+}

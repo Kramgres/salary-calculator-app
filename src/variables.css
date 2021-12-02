@@ -14,5 +14,16 @@
     --primary9-color: #003A8C;
     --primary10-color: #002766;
 
+    --error1-color: #fff1f0;
+    --error2-color: #ffccc7;
+    --error3-color: #ffa39e;
+    --error4-color: #ff7875;
+    --error5-color: #ff4d4f;
+    --error6-color: #f5222d;
+    --error7-color: #cf1322;
+    --error8-color: #a8071a;
+    --error9-color: #820014;
+    --error10-color: #5c0011;
+
     --white-color: #FFFFFF
 }

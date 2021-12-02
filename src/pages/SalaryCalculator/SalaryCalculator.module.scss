@@ -6,11 +6,32 @@
 
   &__title{
     &:global(.ant-typography) {
-      font-size: 24px;
+      font-size: 28px;
+      margin-bottom: 40px;
     }
   }
 }
 
 .days {
   display: flex;
+  flex-direction: column-reverse;
+
+  &__button {
+    width: 236px;
+    margin-right: 16px;
+  }
+}
+
+.daysHeader {
+  display: grid;
+  grid-template-columns: 300px 150px 120px 70px;
+  grid-column-gap: 24px;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.notFound {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 40px;
 }
