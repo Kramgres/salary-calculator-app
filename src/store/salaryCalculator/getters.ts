@@ -1,5 +1,5 @@
-import {AppStore} from '../types'
 import { Day } from '../type'
+import {AppStore} from '../store'
 
 import {SalaryCalculatorState} from './types'
 
