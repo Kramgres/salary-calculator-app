@@ -1,0 +1,11 @@
+.button {
+  width: 180px;
+}
+
+.registrationLink {
+  text-align: center;
+
+  & a {
+    color: var(--primary6-color);
+  }
+}

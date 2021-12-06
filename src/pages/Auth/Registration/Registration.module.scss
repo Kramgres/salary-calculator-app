@@ -1,0 +1,11 @@
+.button {
+  width: 250px;
+}
+
+.loginLink {
+  text-align: center;
+
+  & a {
+    color: var(--primary6-color);
+  }
+}

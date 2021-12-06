@@ -1,18 +1,23 @@
 import React, {FC} from 'react'
 import {Button, Form, Input} from 'antd'
+import {Link} from 'react-router-dom'
+import cn from 'classnames'
 
 import logo from 'src/assets/images/sibdev-logo.svg'
+
+import {PATHS} from '../../../constants/paths'
+import stylesAuth from '../Auth.module.scss'
 
 import styles from './Login.module.scss'
 
 const Login: FC = () => {
   return (
-    <div className={styles.login}>
-      <div className={styles.login__container}>
-        <div className={styles.logo}>
+    <div className={stylesAuth.auth}>
+      <div className={stylesAuth.auth__container}>
+        <div className={stylesAuth.logo}>
           <img src={logo} alt="Logo"/>
         </div>
-        <h1 className={styles.title}>Вход</h1>
+        <h1 className={stylesAuth.title}>Вход</h1>
         <Form
           /*          onFinish={onFinish}*/
           layout="vertical">
@@ -29,8 +34,9 @@ const Login: FC = () => {
             <Input.Password placeholder="Пароль"/>
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className={styles.button}>Войти</Button>
+            <Button type="primary" htmlType="submit" className={cn(styles.button, stylesAuth.button)}>Войти</Button>
           </Form.Item>
+          <div className={styles.registrationLink}>У вас нет аккаунта? <Link to={PATHS.registration}>Зарегистрироваться</Link></div>
         </Form>
       </div>
     </div>
