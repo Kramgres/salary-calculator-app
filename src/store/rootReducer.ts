@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux'
 
-import reducer from './salaryCalculator/reducer'
+import salaryCalculatorReducer from './salaryCalculator/reducer'
+import authReducer from './auth/reducer'
 
 const rootReducer = combineReducers({
-  salaryCalculator: reducer
+  salaryCalculator: salaryCalculatorReducer,
+  auth: authReducer
 })
 
 export default rootReducer

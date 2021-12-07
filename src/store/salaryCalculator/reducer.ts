@@ -24,7 +24,7 @@ const calculateResult = (startTime: Moment, endTime: Moment, cost: number): numb
 
 let dayId = 1
 
-const reducer = (state = initialState, action: SalaryCalculatorActions): SalaryCalculatorState => {
+const salaryCalculatorReducer = (state = initialState, action: SalaryCalculatorActions): SalaryCalculatorState => {
   switch (action.type) {
   case SalaryCalculatorActionTypes.ADD_NEW_DAY: {
     return {
@@ -75,4 +75,4 @@ const reducer = (state = initialState, action: SalaryCalculatorActions): SalaryC
   }
 }
 
-export default reducer
+export default salaryCalculatorReducer

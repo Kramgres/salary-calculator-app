@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom'
 import cn from 'classnames'
 
 import logo from 'src/assets/images/sibdev-logo.svg'
+import {PATHS} from 'src/constants/paths'
 
-import {PATHS} from '../../../constants/paths'
 import stylesAuth from '../Auth.module.scss'
 
 import styles from './Login.module.scss'
