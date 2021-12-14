@@ -3,7 +3,6 @@ import {AuthActions, AuthActionTypes, AuthState} from './types'
 const initialState: AuthState = {
   user: null,
   isAuthorized: false,
-  loading: false
 }
 
 const authReducer = (state = initialState, action: AuthActions): AuthState => {
@@ -13,18 +12,6 @@ const authReducer = (state = initialState, action: AuthActions): AuthState => {
       ...state,
       user: action.payload,
       isAuthorized: true
-    }
-  }
-  case AuthActionTypes.SET_LOADING: {
-    return {
-      ...state,
-      loading: action.payload
-    }
-  }
-  case AuthActionTypes.SET_ERROR: {
-    return {
-      ...state,
-      error: action.payload
     }
   }
   case AuthActionTypes.CLEAR_USER: {

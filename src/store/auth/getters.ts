@@ -16,8 +16,3 @@ export const getUserInfoState = (state: AppStore): User | null => {
   const authState = getAuthState(state)
   return authState.user
 }
-
-export const getUserLoadingState = (state: AppStore): boolean => {
-  const authState = getAuthState(state)
-  return authState.loading
-}

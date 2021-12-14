@@ -9,6 +9,7 @@ import Logo from 'src/assets/images/sibdev-logo.svg'
 import stylesLayout from 'src/layouts/MainLayout/MainLayout.module.scss'
 import {PATHS} from 'src/constants/paths'
 import {logout} from 'src/services/auth/auth'
+import {clearUserStateAction} from 'src/store/auth/actions'
 
 import styles from './Header.module.scss'
 
@@ -19,7 +20,9 @@ const Header: FC = () => {
   const dispatch = useDispatch()
 
   const onLogout = () => {
-    dispatch(logout())
+    logout()
+    dispatch(clearUserStateAction())
+
   }
 
   return (

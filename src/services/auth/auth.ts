@@ -1,55 +1,25 @@
-import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from 'firebase/auth'
-import {Dispatch} from 'redux'
-
-import {AuthActions} from 'src/store/auth/types'
 import {
-  clearUserStateAction,
-  setErrorStateAction,
-  setLoadingStateAction,
-  setUserStateAction
-} from 'src/store/auth/actions'
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  UserCredential
+} from 'firebase/auth'
 
 import {LoginRequest, RegistrationRequest} from './types'
 
-export const register = (data: RegistrationRequest) => async (dispatch: Dispatch<AuthActions>): Promise<void> => {
+export const register = async (data: RegistrationRequest): Promise<UserCredential> => {
   const auth = getAuth()
-  let response
-
-  try {
-    dispatch(setLoadingStateAction(true))
-    response = await createUserWithEmailAndPassword(auth, data.email, data.password)
-  } catch (error: any) {
-    dispatch(setErrorStateAction({code: error.code, message: error.message}))
-  } finally {
-    dispatch(setLoadingStateAction(false))
-  }
-
-  if (response) {
-    dispatch(setUserStateAction({ id: response.user.uid, email: response.user.email }))
-  }
+  return await createUserWithEmailAndPassword(auth, data.email, data.password)
 }
 
-export const login = (data: LoginRequest) => async (dispatch: Dispatch<AuthActions>): Promise<void> => {
+export const login = async (data: LoginRequest): Promise<UserCredential> => {
   const auth = getAuth()
-  let response
-
-  try {
-    dispatch(setLoadingStateAction(true))
-    response = await signInWithEmailAndPassword(auth, data.email, data.password)
-  } catch (error: any) {
-    dispatch(setErrorStateAction({code: error.code, message: error.message}))
-  } finally {
-    dispatch(setLoadingStateAction(false))
-  }
-
-  if (response) {
-    dispatch(setUserStateAction({ id: response.user.uid, email: response.user.email }))
-  }
+  return await signInWithEmailAndPassword(auth, data.email, data.password)
 }
 
-export const logout = () => async (dispatch: Dispatch<AuthActions>): Promise<void> => {
+export const logout = async (): Promise<void> => {
   const auth = getAuth()
 
-  await signOut(auth)
-  dispatch(clearUserStateAction())
+  return await signOut(auth)
 }
