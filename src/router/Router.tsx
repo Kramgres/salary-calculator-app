@@ -1,5 +1,5 @@
 import React, {FC, useEffect} from 'react'
-import {BrowserRouter, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import {useDispatch} from 'react-redux'
 
@@ -11,7 +11,9 @@ import Login from 'src/pages/Auth/Login/Login'
 import Registration from 'src/pages/Auth/Registration/Registration'
 import {setUserStateAction} from 'src/store/auth/actions'
 
-import GuestRoute from './GuestRoute'
+import Settings from '../pages/User/Settings/Settings'
+
+import PrivateRoute from './PrivateRoute'
 
 const Router: FC = () => {
   const dispatch = useDispatch()
@@ -28,12 +30,15 @@ const Router: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <GuestRoute path={PATHS.root} element={<MainLayout/>}>
-          <GuestRoute path={PATHS.root} element={<Home/>}/>
-          <GuestRoute path={PATHS.calculator} element={<SalaryCalculator/>}/>
-          <GuestRoute path={PATHS.login} element={<Login/>}/>
-          <GuestRoute path={PATHS.registration} element={<Registration/>}/>
-        </GuestRoute>
+        <Route path={PATHS.root} element={<MainLayout/>}>
+          <Route path={PATHS.root} element={<Home/>}/>
+          <Route path={PATHS.calculator} element={<SalaryCalculator/>}/>
+          <Route path={PATHS.login} element={<Login/>}/>
+          <Route path={PATHS.registration} element={<Registration/>}/>
+          <Route path={PATHS.user}>
+            <Route path={PATHS.settings} element={<PrivateRoute><Settings/></PrivateRoute>}/>
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   )

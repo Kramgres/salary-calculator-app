@@ -10,7 +10,6 @@ import {timeFormat} from 'src/constants/common'
 
 import styles from './Day.module.scss'
 
-
 type Props = {
   id: number,
   startTime: Moment,
@@ -18,7 +17,6 @@ type Props = {
   cost: number
   result?: number
 }
-
 
 const Day: FC<Props> = ({id, startTime, endTime, cost, result}) => {
   const dispatch = useDispatch()

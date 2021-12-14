@@ -2,5 +2,7 @@ export const PATHS = {
   root: '/',
   calculator: '/calculator',
   login: '/login',
-  registration: '/registration'
+  registration: '/registration',
+  user: '/user',
+  settings: 'settings'
 }
