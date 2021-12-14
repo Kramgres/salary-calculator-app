@@ -2,22 +2,24 @@ import React, {FC} from 'react'
 import {Button, Form, Input} from 'antd'
 import {Link} from 'react-router-dom'
 import cn from 'classnames'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 import logo from 'src/assets/images/sibdev-logo.svg'
 import {PATHS} from 'src/constants/paths'
 import {RegistrationRequest} from 'src/services/auth/types'
+import {register} from 'src/services/auth/auth'
+import {getUserLoadingState} from 'src/store/auth/getters'
 
 import stylesAuth from '../Auth.module.scss'
-import {registerUser} from '../../../services/auth/auth'
 
 import styles from './Registration.module.scss'
 
 const Registration: FC = () => {
   const dispatch = useDispatch()
+  const loading = useSelector(getUserLoadingState)
 
   const onFinish = async (values: RegistrationRequest) => {
-    dispatch(registerUser(values))
+    dispatch(register(values))
   }
 
   return (
@@ -63,7 +65,7 @@ const Registration: FC = () => {
             <Input.Password placeholder="Подверждение пароля"/>
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className={cn(stylesAuth.button, styles.button)}>Зарегистрироваться</Button>
+            <Button loading={loading} type="primary" htmlType="submit" className={cn(stylesAuth.button, styles.button)}>Зарегистрироваться</Button>
           </Form.Item>
           <div className={styles.loginLink}>У меня есть аккаунт. <Link to={PATHS.login}>Войти</Link></div>
         </Form>

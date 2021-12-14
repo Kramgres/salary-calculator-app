@@ -1,16 +1,30 @@
-import React, {FC} from 'react'
-import {Routes, BrowserRouter} from 'react-router-dom'
+import React, {FC, useEffect} from 'react'
+import {BrowserRouter, Routes} from 'react-router-dom'
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
+import {useDispatch} from 'react-redux'
 
-import {PATHS} from '../constants/paths'
-import MainLayout from '../layouts/MainLayout/MainLayout'
-import Home from '../pages/Home/Home.page'
-import SalaryCalculator from '../pages/SalaryCalculator/SalaryCalculator'
-import Login from '../pages/Auth/Login/Login'
-import Registration from '../pages/Auth/Registration/Registration'
+import {PATHS} from 'src/constants/paths'
+import MainLayout from 'src/layouts/MainLayout/MainLayout'
+import Home from 'src/pages/Home/Home.page'
+import SalaryCalculator from 'src/pages/SalaryCalculator/SalaryCalculator'
+import Login from 'src/pages/Auth/Login/Login'
+import Registration from 'src/pages/Auth/Registration/Registration'
+import {setUserStateAction} from 'src/store/auth/actions'
 
 import GuestRoute from './GuestRoute'
 
 const Router: FC = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const auth = getAuth()
+    return onAuthStateChanged(auth, user => {
+      if (user) {
+        dispatch(setUserStateAction({id: user?.uid, email: user?.email}))
+      }
+    })
+  }, [dispatch])
+
   return (
     <BrowserRouter>
       <Routes>
