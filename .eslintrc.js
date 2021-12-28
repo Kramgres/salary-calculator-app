@@ -5,17 +5,17 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect',
     },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
-        moduleDirectory: ['node_modules', './']
+        moduleDirectory: ['node_modules', './'],
       },
     },
   },
@@ -23,7 +23,7 @@ module.exports = {
     browser: true,
     amd: true,
     node: true,
-    es6: true
+    es6: true,
   },
   extends: [
     'eslint:recommended',
@@ -33,30 +33,24 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
-    'plugin:import/typescript'
+    'plugin:import/typescript',
+    'plugin:prettier/recommended',
   ],
+  plugins: ['prettier'],
   rules: {
-    'indent': [
-      'error',
-      2
-    ],
-    'linebreak-style': [
-      'error',
-      'unix'
-    ],
-    'quotes': [
-      'error',
-      'single',
-      'avoid-escape'
-    ],
-    'semi': [
-      'error',
-      'never'
+    indent: ['error', 2],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single', 'avoid-escape'],
+    'max-len': [
+      'warn',
+      {
+        code: 120,
+        ignoreComments: true,
+      },
     ],
     'no-console': 0,
     'no-labels': 0,
     'no-var': 'error',
-
     'no-multi-spaces': 'error',
     'space-in-parens': 'error',
     'no-multiple-empty-lines': 'error',
@@ -67,15 +61,25 @@ module.exports = {
       {
         components: ['Link'],
         specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref', 'preferButton']
-      }
+        aspects: ['invalidHref', 'preferButton'],
+      },
     ],
     'import/order': [
       'error',
       {
-        'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index' ],
-        'newlines-between': 'always'
-      }
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+      },
+    ],
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+        bracketSpacing: true,
+        jsxBracketSameLine: false,
+        tabWidth: 2,
+      },
     ],
   },
-}
+};
