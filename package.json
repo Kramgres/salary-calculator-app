@@ -71,9 +71,6 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "eslint --fix"
-    ],
-    "*.{ts,tsx,js,jsx,json}": [
-      "prettier --write"
     ]
   },
   "husky": {
